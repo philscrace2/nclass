@@ -19,7 +19,7 @@ namespace NClass.Translations {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public partial class Strings {
@@ -1594,6 +1594,15 @@ namespace NClass.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class Diagram.
+        /// </summary>
+        public static string MenuClassDiagram {
+            get {
+                return ResourceManager.GetString("MenuClassDiagram", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;Close {0}.
         /// </summary>
         public static string MenuClose {
@@ -2265,6 +2274,15 @@ namespace NClass.Translations {
         public static string MenuSize {
             get {
                 return ResourceManager.GetString("MenuSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State Chart.
+        /// </summary>
+        public static string MenuStateChart {
+            get {
+                return ResourceManager.GetString("MenuStateChart", resourceCulture);
             }
         }
         

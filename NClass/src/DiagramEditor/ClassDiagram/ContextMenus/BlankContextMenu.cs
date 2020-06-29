@@ -28,6 +28,10 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 		#region MenuItem fields
 
 		ToolStripMenuItem mnuAddNewElement;
+
+		ToolStripMenuItem mnuClassDiagram;
+		ToolStripMenuItem mnuStateChart;
+
 		ToolStripMenuItem mnuNewClass;
 		ToolStripMenuItem mnuNewStructure;
 		ToolStripMenuItem mnuNewInterface;
@@ -84,6 +88,10 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 		private void InitMenuItems()
 		{
 			mnuAddNewElement = new ToolStripMenuItem(Strings.MenuNew, Resources.NewEntity);
+
+			mnuClassDiagram = new ToolStripMenuItem(Strings.MenuClassDiagram, Resources.Class);
+			mnuStateChart = new ToolStripMenuItem(Strings.MenuStateChart, Resources.Class);
+
 			mnuNewClass = new ToolStripMenuItem(Strings.MenuClass, Resources.Class, mnuNewClass_Click);
 			mnuNewStructure = new ToolStripMenuItem(Strings.MenuStruct, Resources.Structure, mnuNewStructure_Click);
 			mnuNewInterface = new ToolStripMenuItem(Strings.MenuInterface, Resources.Interface32, mnuNewInterface_Click);
@@ -111,13 +119,18 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 			mnuShowParameterNames.CheckOnClick = true;
 			mnuShowInitialValue = new ToolStripMenuItem(Strings.MenuInitialValue, null);
 			mnuShowInitialValue.CheckedChanged += mnuShowInitialValue_CheckedChanged;
-			mnuShowInitialValue.CheckOnClick = true;
+			mnuShowInitialValue.CheckOnClick = true;			
 
 			mnuPaste = new ToolStripMenuItem(Strings.MenuPaste, Resources.Paste, mnuPaste_Click);
 			mnuSaveAsImage = new ToolStripMenuItem(Strings.MenuSaveAsImage, Resources.Image, mnuSaveAsImage_Click);
 			mnuSelectAll = new ToolStripMenuItem(Strings.MenuSelectAll, null, mnuSelectAll_Click);
 
 			mnuAddNewElement.DropDownItems.AddRange(new ToolStripItem[] {
+				mnuClassDiagram,
+				mnuStateChart
+			});
+
+			mnuClassDiagram.DropDownItems.AddRange(new ToolStripItem[] {
 				mnuNewClass,
 				mnuNewStructure,
 				mnuNewInterface,
@@ -133,6 +146,10 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 				mnuNewDependency,
 				mnuNewNesting,
 				mnuNewCommentRelationship
+			});
+
+			mnuStateChart.DropDownItems.AddRange(new ToolStripItem[] {
+								
 			});
 			mnuMembersFormat.DropDownItems.AddRange(new ToolStripItem[] {
 				mnuShowType,

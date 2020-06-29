@@ -1158,4 +1158,10 @@ Do you still want to continue?</value>
   <data name="Stereotype" xml:space="preserve">
     <value>Stereotype:</value>
   </data>
+  <data name="MenuClassDiagram" xml:space="preserve">
+    <value>Class Diagram</value>
+  </data>
+  <data name="MenuStateChart" xml:space="preserve">
+    <value>State Chart</value>
+  </data>
 </root>
