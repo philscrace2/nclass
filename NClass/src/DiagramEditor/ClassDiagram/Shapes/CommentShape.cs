@@ -23,6 +23,8 @@ using NClass.DiagramEditor.ClassDiagram.Dialogs;
 using NClass.DiagramEditor.ClassDiagram.ContextMenus;
 using NClass.DiagramEditor.ClassDiagram.Editors;
 using NClass.Translations;
+using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram.Shapes
 {

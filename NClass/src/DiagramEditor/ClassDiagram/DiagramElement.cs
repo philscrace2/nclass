@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using NClass.Core;
 using NClass.Translations;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram
 {

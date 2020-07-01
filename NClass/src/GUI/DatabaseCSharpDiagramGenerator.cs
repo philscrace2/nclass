@@ -7,14 +7,14 @@ using System.Drawing;
 using NClass.Core;
 using NClass.CSharp;
 using NClass.Translations;
-using NClass.DiagramEditor.ClassDiagram;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NClass.DiagramEditor.ClassDiagram.Connections;
 
 using NClass.CodeGenerator;
 
 using DatabaseSchemaReader;
 using DatabaseSchemaReader.DataSchema;
+using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.GUI
 {

@@ -22,6 +22,8 @@ using System.Xml;
 using NClass.Core;
 using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NClass.DiagramEditor.ClassDiagram.ContextMenus;
+using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram.Connections
 {

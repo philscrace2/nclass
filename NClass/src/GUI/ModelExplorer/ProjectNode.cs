@@ -18,10 +18,10 @@ using System.Windows.Forms;
 using NClass.Core;
 using NClass.Java;
 using NClass.CSharp;
-using NClass.DiagramEditor.ClassDiagram;
 using NClass.GUI.Properties;
 using NClass.Translations;
 using NClass.DiagramEditor;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.GUI.ModelExplorer
 {

@@ -15,7 +15,8 @@
 
 using System;
 using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using NClass.DiagramEditor.GenericUml;
+using NClass.DiagramEditor.GenericUml.Shapes;
 
 namespace NClass.DiagramEditor.ClassDiagram.Connections
 {

@@ -25,10 +25,12 @@ using NClass.DiagramEditor.ClassDiagram.Dialogs;
 using NClass.DiagramEditor.ClassDiagram.Connections;
 using NClass.DiagramEditor.ClassDiagram.ContextMenus;
 using NClass.Translations;
+using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.ClassDiagram;
 
-namespace NClass.DiagramEditor.ClassDiagram
+namespace NClass.DiagramEditor.GenericUml
 {
-    public class Diagram : Model, IDocument, IEditable, IPrintable
+	public class Diagram : Model, IDocument, IEditable, IPrintable
 	{
 		private enum State
 		{
@@ -262,7 +264,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 		{
 			get
 			{
-				return (SelectedElementCount > 0);
+				return SelectedElementCount > 0;
 			}
 		}
 
@@ -326,10 +328,10 @@ namespace NClass.DiagramEditor.ClassDiagram
 
 			foreach (Connection connection in connections.GetSelectedElements())
 				yield return connection;
-			
+
 			foreach (Connection connection in connections.GetUnselectedElements())
 				yield return connection;
-			
+
 			foreach (Shape shape in shapes.GetUnselectedElements())
 				yield return shape;
 		}
@@ -338,10 +340,10 @@ namespace NClass.DiagramEditor.ClassDiagram
 		{
 			foreach (Shape shape in shapes.GetUnselectedElementsReversed())
 				yield return shape;
-			
+
 			foreach (Connection connection in connections.GetUnselectedElementsReversed())
 				yield return connection;
-			
+
 			foreach (Connection connection in connections.GetSelectedElementsReversed())
 				yield return connection;
 
@@ -429,7 +431,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 				if (clip.IntersectsWith(connection.GetVisibleArea(Zoom)))
 					connection.DrawSelectionLines(g, Zoom, Offset);
 			}
-			
+
 			if (state == State.Multiselecting)
 			{
 				RectangleF frame = RectangleF.FromLTRB(
@@ -531,7 +533,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 					bottomMax = area.Bottom + Padding;
 			}
 
-			this.Size = new Size(rightMax, bottomMax);
+			Size = new Size(rightMax, bottomMax);
 		}
 
 		public void AlignLeft()
@@ -818,7 +820,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 				Strings.DeleteElementsConfirmation, Strings.Confirmation,
 				MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-			return (result == DialogResult.Yes);
+			return result == DialogResult.Yes;
 		}
 
 		public void DeleteSelectedElements()
@@ -866,7 +868,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 				{
 					OnNeedsRedraw(EventArgs.Empty);
 					return;
-				}					
+				}
 			}
 			foreach (Connection connection in connections)
 			{
@@ -1010,8 +1012,8 @@ namespace NClass.DiagramEditor.ClassDiagram
 		private void SelectElements(AbsoluteMouseEventArgs e)
 		{
 			DiagramElement firstElement = null;
-			bool multiSelection = (Control.ModifierKeys == Keys.Control);
-			
+			bool multiSelection = Control.ModifierKeys == Keys.Control;
+
 			foreach (DiagramElement element in GetElementsInDisplayOrder())
 			{
 				bool isSelected = element.IsSelected;
@@ -1056,7 +1058,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 			}
 			else if (state == State.CreatingShape)
 			{
-				shapeOutline.Location = new Point((int) e.X, (int) e.Y);
+				shapeOutline.Location = new Point((int)e.X, (int)e.Y);
 				Redraw();
 			}
 			else if (state == State.CreatingConnection)
@@ -1134,7 +1136,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 		{
 			//TODO: ActiveElement.KeyDown() - de nem minden esetben (pl. törlésnél nem)
 			RedrawSuspended = true;
-			
+
 			// Delete
 			if (e.KeyCode == Keys.Delete)
 			{
@@ -1170,7 +1172,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 				if (e.Shift || e.Control)
 					ActiveElement.MoveDown();
 				else
-					ActiveElement.SelectNext();				
+					ActiveElement.SelectNext();
 			}
 			// Ctrl + X
 			else if (e.KeyCode == Keys.X && e.Modifiers == Keys.Control)
@@ -1312,7 +1314,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 				if (connection != sender)
 					connection.IsActive = false;
 			}
-			ActiveElement = (DiagramElement) sender;
+			ActiveElement = (DiagramElement)sender;
 		}
 
 		private void shape_Dragging(object sender, MoveEventArgs e)
@@ -1322,7 +1324,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 			// Align to other shapes
 			if (Settings.Default.UsePrecisionSnapping && Control.ModifierKeys != Keys.Shift)
 			{
-				Shape shape = (Shape) sender;
+				Shape shape = (Shape)sender;
 
 				foreach (Shape otherShape in shapes.GetUnselectedElements())
 				{
@@ -1349,7 +1351,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 					}
 				}
 			}
-			
+
 			// Get maxmimal avaiable offset for the selected elements
 			foreach (Shape shape in shapes)
 			{
@@ -1377,7 +1379,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 		{
 			if (Settings.Default.UsePrecisionSnapping && Control.ModifierKeys != Keys.Shift)
 			{
-				Shape shape = (Shape) sender;
+				Shape shape = (Shape)sender;
 				Size change = e.Change;
 
 				// Horizontal resizing
@@ -1503,7 +1505,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 			connection.SelectionChanged -= new EventHandler(connection_SelectionChanged);
 			connection.RouteChanged -= new EventHandler(connection_RouteChanged);
 			connection.BendPointMove -= new BendPointEventHandler(connection_BendPointMove);
-			connections.Remove(connection);			
+			connections.Remove(connection);
 			RecalculateSize();
 		}
 
@@ -1511,7 +1513,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 		{
 			if (!selectioning)
 			{
-				Shape shape = (Shape) sender;
+				Shape shape = (Shape)sender;
 
 				if (shape.IsSelected)
 				{
@@ -1533,7 +1535,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 		{
 			if (!selectioning)
 			{
-				Connection connection = (Connection) sender;
+				Connection connection = (Connection)sender;
 
 				if (connection.IsSelected)
 				{
@@ -1553,7 +1555,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 
 		private void connection_RouteChanged(object sender, EventArgs e)
 		{
-			Connection connection = (Connection) sender;
+			Connection connection = (Connection)sender;
 			connection.ValidatePosition(DiagramPadding);
 
 			RecalculateSize();
@@ -1617,7 +1619,7 @@ namespace NClass.DiagramEditor.ClassDiagram
 					shapeOutline = CommentShape.GetOutline(Style.CurrentStyle);
 					break;
 			}
-			shapeOutline.Location = new Point((int) mouseLocation.X, (int) mouseLocation.Y);
+			shapeOutline.Location = new Point((int)mouseLocation.X, (int)mouseLocation.Y);
 			Redraw();
 		}
 

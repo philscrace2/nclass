@@ -20,10 +20,11 @@ using NClass.Core;
 using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NClass.Translations;
 using NClass.DiagramEditor.ClassDiagram.Dialogs;
+using NClass.DiagramEditor.GenericUml.Editors;
 
 namespace NClass.DiagramEditor.ClassDiagram.Editors
 {
-    public partial class CompositeTypeEditor : TypeEditor
+	public partial class CompositeTypeEditor : TypeEditor
 	{
 		public CompositeTypeEditor()
 		{

@@ -21,11 +21,13 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using NClass.Core;
 using NClass.DiagramEditor.ClassDiagram.ContextMenus;
-using NClass.DiagramEditor.ClassDiagram.Editors;
+using NClass.DiagramEditor.ClassDiagram;
+using NClass.DiagramEditor.ClassDiagram.Shapes;
+using NClass.DiagramEditor.GenericUml.Editors;
 
-namespace NClass.DiagramEditor.ClassDiagram.Shapes
+namespace NClass.DiagramEditor.GenericUml.Shapes
 {
-    public abstract class TypeShape : Shape
+	public abstract class TypeShape : Shape
 	{
 		public const int DefaultWidth = 162;
 		public const int DefaultHeight = 216;
@@ -135,10 +137,10 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 		{
 			get
 			{
-				return (
+				return
 					Settings.Default.ShowChevron == ChevronMode.Always ||
 					Settings.Default.ShowChevron == ChevronMode.AsNeeded && showChevron
-				);
+				;
 			}
 		}
 
@@ -210,10 +212,10 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 
 		private bool HasIdentifier(Style style)
 		{
-			return (
+			return
 				style.ShowSignature ||
 				style.ShowStereotype && TypeBase.Stereotype != null
-			);
+			;
 		}
 
 		public override void Collapse()
@@ -264,13 +266,13 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 
 		private bool IsChevronPressed(PointF mouseLocation)
 		{
-			return (
+			return
 				Settings.Default.ShowChevron != ChevronMode.Never &&
 				mouseLocation.X >= Right - MarginSize - chevronSize.Width &&
 				mouseLocation.X < Right - MarginSize &&
 				mouseLocation.Y >= Top + MarginSize &&
 				mouseLocation.Y < Top + MarginSize + chevronSize.Height
-			);
+			;
 		}
 
 		protected abstract EditorWindow GetEditorWindow();
@@ -286,7 +288,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 		protected override void OnResize(ResizeEventArgs e)
 		{
 			base.OnResize(e);
-			
+
 			EditorWindow window = GetEditorWindow();
 			if (window != null)
 				window.Relocate(this);
@@ -353,13 +355,13 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 			MinimumSize = new Size(MinimumSize.Width, GetRequiredHeight());
 		}
 
-		protected override Shape.ResizeMode GetResizeMode(AbsoluteMouseEventArgs e)
+		protected override ResizeMode GetResizeMode(AbsoluteMouseEventArgs e)
 		{
 			ResizeMode resizeMode = base.GetResizeMode(e);
 
 			if (Collapsed)
 			{
-				return (resizeMode & ~ResizeMode.Bottom);
+				return resizeMode & ~ResizeMode.Bottom;
 			}
 			else
 			{
@@ -610,7 +612,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 
 		private void DrawChevron(IGraphics g)
 		{
-			Bitmap chevron = (Collapsed) ? Properties.Resources.Expand : Properties.Resources.Collapse;
+			Bitmap chevron = Collapsed ? Properties.Resources.Expand : Properties.Resources.Collapse;
 			Point location = new Point(Right - MarginSize - chevronSize.Width, Top + MarginSize);
 
 			g.DrawImage(chevron, location);
@@ -639,7 +641,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 			if (HasIdentifier(style))
 			{
 				string identifier =
-					(style.ShowSignature) ? TypeBase.Signature : TypeBase.Stereotype;
+					style.ShowSignature ? TypeBase.Signature : TypeBase.Stereotype;
 				identifierWidth = g.MeasureString(identifier, style.IdentifierFont,
 					PointF.Empty, headerFormat).Width;
 			}
@@ -712,7 +714,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Shapes
 			{
 				bool collapsed;
 				if (bool.TryParse(collapsedNode.InnerText, out collapsed))
-					this.Collapsed = collapsed;
+					Collapsed = collapsed;
 			}
 			UpdateMinSize();
 		}

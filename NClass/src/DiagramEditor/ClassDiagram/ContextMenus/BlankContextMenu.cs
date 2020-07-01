@@ -18,10 +18,11 @@ using System.Windows.Forms;
 using NClass.DiagramEditor.Properties;
 using NClass.Translations;
 using NClass.Core;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 {
-    public sealed class BlankContextMenu : DiagramContextMenu
+	public sealed class BlankContextMenu : DiagramContextMenu
 	{
 		static BlankContextMenu _default = new BlankContextMenu();
 

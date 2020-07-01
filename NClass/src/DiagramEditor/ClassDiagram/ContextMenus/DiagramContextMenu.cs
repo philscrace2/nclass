@@ -14,6 +14,8 @@
 // 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 
+using NClass.DiagramEditor.GenericUml;
+
 namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 {
     public abstract class DiagramContextMenu : ContextMenu

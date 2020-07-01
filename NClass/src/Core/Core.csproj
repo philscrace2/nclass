@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="BadSyntaxException.cs" />
     <Compile Include="Entities\EntityType.cs" />
+    <Compile Include="Entities\StateType.cs" />
     <Compile Include="Members\MemberType.cs" />
     <Compile Include="RelationshipEventArgs.cs" />
     <Compile Include="Relationships\AssociationType.cs" />

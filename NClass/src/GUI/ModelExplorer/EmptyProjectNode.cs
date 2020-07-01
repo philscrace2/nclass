@@ -18,7 +18,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using NClass.Core;
 using NClass.Translations;
-using NClass.DiagramEditor.ClassDiagram;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.GUI.ModelExplorer
 {

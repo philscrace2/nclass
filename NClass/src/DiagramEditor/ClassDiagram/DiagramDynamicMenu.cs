@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using NClass.Translations;
 using NClass.Core;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram
 {

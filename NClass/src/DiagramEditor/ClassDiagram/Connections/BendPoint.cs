@@ -16,11 +16,11 @@
 using System;
 using System.Xml;
 using System.Drawing;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using NClass.DiagramEditor.GenericUml.Shapes;
 
 namespace NClass.DiagramEditor.ClassDiagram.Connections
 {
-	public sealed class BendPoint
+    public sealed class BendPoint
 	{
 		const int Spacing = Connection.Spacing;
 		internal const int SquareSize = 8;

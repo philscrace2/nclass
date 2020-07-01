@@ -7,9 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using NClass.AssemblyImport.Lang;
 using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram;
 using NClass.DiagramEditor.ClassDiagram.Connections;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NReflect;
 using NReflect.Filter;
 using NReflect.NREntities;
@@ -17,13 +15,15 @@ using NReflect.NRMembers;
 using NReflect.NRParameters;
 using NReflect.NRCode;
 using NReflect.NRRelationship;
+using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.AssemblyImport
 {
-  /// <summary>
-  /// Imports a .net assembly into NClass.
-  /// </summary>
-  public class NETImport
+    /// <summary>
+    /// Imports a .net assembly into NClass.
+    /// </summary>
+    public class NETImport
   {
     // ========================================================================
     // Constants

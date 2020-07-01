@@ -16,11 +16,12 @@
 using System;
 using System.Drawing;
 using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using NClass.DiagramEditor.GenericUml;
+using NClass.DiagramEditor.GenericUml.Shapes;
 
 namespace NClass.DiagramEditor.ClassDiagram.Connections
 {
-	internal sealed class Nesting : Connection
+    internal sealed class Nesting : Connection
 	{
 		const int Radius = 9;
 		const int Diameter = Radius * 2;

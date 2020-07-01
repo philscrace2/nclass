@@ -23,10 +23,12 @@ using NClass.Translations;
 
 using System.Collections.Generic;
 using System.Linq;
+using NClass.DiagramEditor.GenericUml;
+using NClass.DiagramEditor.GenericUml.Editors;
 
 namespace NClass.DiagramEditor.ClassDiagram.Editors
 {
-	public partial class MemberEditor : FloatingEditor
+    public partial class MemberEditor : FloatingEditor
 	{
 		CompositeTypeShape shape = null;
 		bool needValidation = false;

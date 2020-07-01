@@ -19,6 +19,7 @@ using NClass.Core;
 using NClass.DiagramEditor.Properties;
 using NClass.DiagramEditor.ClassDiagram.Connections;
 using NClass.Translations;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 {

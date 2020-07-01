@@ -16,6 +16,7 @@
 using System.Drawing;
 using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NClass.Core;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram.Editors
 {

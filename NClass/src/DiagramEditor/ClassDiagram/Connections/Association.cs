@@ -19,13 +19,14 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
 using NClass.DiagramEditor.ClassDiagram.ContextMenus;
 using NClass.DiagramEditor.ClassDiagram.Dialogs;
+using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.DiagramEditor.ClassDiagram.Connections
 {
-	internal sealed class Association : Connection
+    internal sealed class Association : Connection
 	{
 		const int DiamondWidth = 10;
 		const int DiamondHeight = 18;

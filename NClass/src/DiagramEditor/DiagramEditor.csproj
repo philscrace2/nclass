@@ -85,7 +85,7 @@
     <Compile Include="ClassDiagram\Editors\ClassTypeEditor.Designer.cs">
       <DependentUpon>ClassTypeEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassDiagram\Editors\FloatingEditor.cs">
+    <Compile Include="GenericUml\Editors\FloatingEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ClassDiagram\Editors\CommentEditor.cs">
@@ -155,10 +155,10 @@
     <Compile Include="ClassDiagram\Editors\EnumValueEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClassDiagram\Editors\TypeEditor.cs">
+    <Compile Include="GenericUml\Editors\TypeEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ClassDiagram\Editors\EditorWindow.cs">
+    <Compile Include="GenericUml\Editors\EditorWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GdiGraphics.cs" />
@@ -229,11 +229,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ImageCreator.cs" />
-    <Compile Include="ClassDiagram\Diagram.cs">
+    <Compile Include="GenericUml\Diagram.cs">
     </Compile>
     <Compile Include="ClassDiagram\Connections\BendPoint.cs" />
     <Compile Include="Clipboard.cs" />
     <Compile Include="ClassDiagram\Shapes\ResizeEventArgs.cs" />
+    <Compile Include="StateChart\Editors\StateTypeEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StateChart\Editors\StateTypeEditor.Designer.cs">
+      <DependentUpon>StateTypeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StateChart\Shapes\NodeShape.cs" />
+    <Compile Include="StateChart\Shapes\StateShape.cs" />
     <Compile Include="ToolStripSimplifiedRenderer.cs">
     </Compile>
     <Compile Include="ClassDiagram\DiagramElement.cs" />
@@ -244,7 +252,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ClassDiagram\Shapes\Shape.cs" />
+    <Compile Include="GenericUml\Shapes\Shape.cs" />
     <Compile Include="Style.cs" />
     <Compile Include="IPrintable.cs" />
     <Compile Include="OrderedList.cs" />
@@ -261,7 +269,7 @@
     <Compile Include="ClassDiagram\Shapes\EnumShape.cs" />
     <Compile Include="ClassDiagram\Shapes\InterfaceShape.cs" />
     <Compile Include="ClassDiagram\Shapes\StructureShape.cs" />
-    <Compile Include="ClassDiagram\Shapes\TypeShape.cs" />
+    <Compile Include="GenericUml\Shapes\TypeShape.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Canvas.resx">
@@ -378,6 +386,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\expand_single.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StateChart\Connections\" />
+    <Folder Include="StateChart\ContextMenus\" />
+    <Folder Include="StateChart\Dialogs\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

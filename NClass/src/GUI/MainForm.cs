@@ -23,12 +23,12 @@ using NClass.Core;
 using NClass.CSharp;
 using NClass.Java;
 using NClass.DiagramEditor;
-using NClass.DiagramEditor.ClassDiagram;
 using NClass.GUI.Dialogs;
 using NClass.Translations;
 
 using System.Threading;
 using System.Net;
+using NClass.DiagramEditor.GenericUml;
 
 namespace NClass.GUI
 {

@@ -17,10 +17,12 @@ using System;
 using System.Drawing;
 using NClass.Core;
 using NClass.DiagramEditor.ClassDiagram.Editors;
+using NClass.DiagramEditor.GenericUml;
+using NClass.DiagramEditor.GenericUml.Editors;
 
 namespace NClass.DiagramEditor.ClassDiagram.Shapes
 {
-    public sealed class ClassShape : CompositeTypeShape
+	public sealed class ClassShape : CompositeTypeShape
 	{
 		ClassType _class;
 

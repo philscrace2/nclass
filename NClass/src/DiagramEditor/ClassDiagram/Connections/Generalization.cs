@@ -17,11 +17,12 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using NClass.DiagramEditor.GenericUml;
+using NClass.DiagramEditor.GenericUml.Shapes;
 
 namespace NClass.DiagramEditor.ClassDiagram.Connections
 {
-	internal sealed class Generalization : Connection
+    internal sealed class Generalization : Connection
 	{
 		static Pen linePen = new Pen(Color.Black);
 

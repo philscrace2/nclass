@@ -17,7 +17,7 @@ using System;
 using System.Windows.Forms;
 using NClass.Core;
 using NClass.DiagramEditor;
-using NClass.DiagramEditor.ClassDiagram;
+using NClass.DiagramEditor.GenericUml;
 using NClass.GUI.Properties;
 using NClass.Translations;
 
