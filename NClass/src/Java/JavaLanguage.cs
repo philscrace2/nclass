@@ -542,5 +542,10 @@ namespace NClass.Java
 		{
 			return new JavaArgumentList();
 		}
+
+		protected override StateType CreateState()
+		{
+			return new JavaState();
+		}
 	}
 }

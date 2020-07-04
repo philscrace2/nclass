@@ -422,7 +422,7 @@ namespace NClass.AssemblyImport
     /// </summary>
     /// <param name="type">The entity to add the fields to.</param>
     /// <param name="fields">A list of fields to add.</param>
-    private void AddFields(SingleInharitanceType type, IEnumerable<NRField> fields)
+    private void AddFields(SingleInheritanceType type, IEnumerable<NRField> fields)
     {
       foreach (NRField nrField in fields)
       {
@@ -461,7 +461,7 @@ namespace NClass.AssemblyImport
     /// </summary>
     /// <param name="type">The entity to add the constructors to.</param>
     /// <param name="constructors">A list of constructors to add.</param>
-    private void AddConstructors(SingleInharitanceType type, IEnumerable<NRConstructor> constructors)
+    private void AddConstructors(SingleInheritanceType type, IEnumerable<NRConstructor> constructors)
     {
       foreach (NRConstructor nrConstructor in constructors)
       {
@@ -474,7 +474,7 @@ namespace NClass.AssemblyImport
     /// </summary>
     /// <param name="type">The entity to add the operators to.</param>
     /// <param name="operators">A list of operators to add.</param>
-    private void AddOperators(SingleInharitanceType type, IEnumerable<NROperator> operators)
+    private void AddOperators(SingleInheritanceType type, IEnumerable<NROperator> operators)
     {
       foreach (NROperator nrOperator in operators)
       {

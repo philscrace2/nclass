@@ -249,10 +249,12 @@ namespace NClass.Core
 		/// </exception>
 		protected internal abstract void ValidateOperation(Operation operation);
 
-		/// <exception cref="BadSyntaxException">
-		/// The <paramref name="field"/> contains invalid modifier combinations.
-		/// </exception>
-		protected internal abstract void ValidateField(Field field);
+		protected internal abstract StateType CreateState();        
+
+        /// <exception cref="BadSyntaxException">
+        /// The <paramref name="field"/> contains invalid modifier combinations.
+        /// </exception>
+        protected internal abstract void ValidateField(Field field);
 
 		protected internal abstract ClassType CreateClass();
 

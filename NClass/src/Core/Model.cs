@@ -294,6 +294,31 @@ namespace NClass.Core
 			AddEntity(comment);
 		}
 
+		public StateType AddState()
+		{
+			StateType state = Language.CreateState();
+			AddState(state);
+			return state;
+		}
+
+		protected virtual void AddState(StateType state)
+		{
+			AddEntity(state);
+		}
+
+		public bool InsertState(StateType newState)
+		{
+			if (newState != null && !entities.Contains(newState) && newState.Language == language)
+			{
+				AddState(newState);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
 		public bool InsertComment(Comment comment)
 		{
 			if (comment != null && !entities.Contains(comment))

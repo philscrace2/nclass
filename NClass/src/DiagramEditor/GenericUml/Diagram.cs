@@ -26,6 +26,7 @@ using NClass.DiagramEditor.ClassDiagram.Connections;
 using NClass.DiagramEditor.ClassDiagram.ContextMenus;
 using NClass.Translations;
 using NClass.DiagramEditor.GenericUml.Shapes;
+using NClass.DiagramEditor.StateChart.Shapes;
 using NClass.DiagramEditor.ClassDiagram;
 
 namespace NClass.DiagramEditor.GenericUml
@@ -1612,6 +1613,7 @@ namespace NClass.DiagramEditor.GenericUml
 				case EntityType.Enum:
 				case EntityType.Interface:
 				case EntityType.Structure:
+				case EntityType.State:
 					shapeOutline = TypeShape.GetOutline(Style.CurrentStyle);
 					break;
 
@@ -1650,6 +1652,10 @@ namespace NClass.DiagramEditor.GenericUml
 				case EntityType.Structure:
 					AddStructure();
 					break;
+				
+				case EntityType.State:
+					AddState();
+					break;
 
 				default:
 					return null;
@@ -1663,6 +1669,12 @@ namespace NClass.DiagramEditor.GenericUml
 		{
 			base.AddClass(newClass);
 			AddShape(new ClassShape(newClass));
+		}
+
+		protected override void AddState(StateType newStateChart)
+		{
+			base.AddState(newStateChart);
+			AddShape(new StateChartShape(newStateChart));
 		}
 
 		protected override void AddStructure(StructureType structure)

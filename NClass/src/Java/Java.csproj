@@ -70,6 +70,7 @@
     <Compile Include="JavaLanguage.cs" />
     <Compile Include="JavaMethod.cs" />
     <Compile Include="JavaParameter.cs" />
+    <Compile Include="JavaState.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">

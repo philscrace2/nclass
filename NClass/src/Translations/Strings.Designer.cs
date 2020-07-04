@@ -2278,6 +2278,15 @@ namespace NClass.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;State.
+        /// </summary>
+        public static string MenuState {
+            get {
+                return ResourceManager.GetString("MenuState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to State Chart.
         /// </summary>
         public static string MenuStateChart {

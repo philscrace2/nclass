@@ -162,6 +162,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GdiGraphics.cs" />
+    <Compile Include="GenericUml\Shapes\NodeShape.cs" />
     <Compile Include="IGraphics.cs" />
     <Compile Include="IClipboardItem.cs" />
     <Compile Include="EditorControlEventArgs.cs" />
@@ -240,8 +241,8 @@
     <Compile Include="StateChart\Editors\StateTypeEditor.Designer.cs">
       <DependentUpon>StateTypeEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="StateChart\Shapes\NodeShape.cs" />
     <Compile Include="StateChart\Shapes\StateShape.cs" />
+    <Compile Include="StateChart\Shapes\StateChartShape.cs" />
     <Compile Include="ToolStripSimplifiedRenderer.cs">
     </Compile>
     <Compile Include="ClassDiagram\DiagramElement.cs" />

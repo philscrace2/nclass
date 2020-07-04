@@ -607,5 +607,10 @@ namespace NClass.CSharp
 		{
 			return new CSharpArgumentList();
 		}
+
+		protected override StateType CreateState()
+		{
+			return new CSharpState();
+		}
 	}
 }

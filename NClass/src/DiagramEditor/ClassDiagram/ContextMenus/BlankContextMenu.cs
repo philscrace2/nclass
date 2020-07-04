@@ -54,6 +54,8 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 		ToolStripMenuItem mnuShowParameterNames;
 		ToolStripMenuItem mnuShowInitialValue;
 
+		ToolStripMenuItem mnuNewState;
+
 		ToolStripMenuItem mnuPaste;
 		ToolStripMenuItem mnuSaveAsImage;
 		ToolStripMenuItem mnuSelectAll;
@@ -120,7 +122,9 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 			mnuShowParameterNames.CheckOnClick = true;
 			mnuShowInitialValue = new ToolStripMenuItem(Strings.MenuInitialValue, null);
 			mnuShowInitialValue.CheckedChanged += mnuShowInitialValue_CheckedChanged;
-			mnuShowInitialValue.CheckOnClick = true;			
+			mnuShowInitialValue.CheckOnClick = true;
+
+			mnuNewState = new ToolStripMenuItem(Strings.MenuState, Resources.Class, mnuNewState_Click);
 
 			mnuPaste = new ToolStripMenuItem(Strings.MenuPaste, Resources.Paste, mnuPaste_Click);
 			mnuSaveAsImage = new ToolStripMenuItem(Strings.MenuSaveAsImage, Resources.Image, mnuSaveAsImage_Click);
@@ -150,7 +154,7 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 			});
 
 			mnuStateChart.DropDownItems.AddRange(new ToolStripItem[] {
-								
+				mnuNewState				
 			});
 			mnuMembersFormat.DropDownItems.AddRange(new ToolStripItem[] {
 				mnuShowType,
@@ -296,6 +300,12 @@ namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
 		{
 			if (Diagram != null)
 				Diagram.SelectAll();
+		}
+
+		private void mnuNewState_Click(object sender, EventArgs e)
+		{
+			if (Diagram != null)
+				Diagram.CreateShape(EntityType.State);
 		}
 	}
 }

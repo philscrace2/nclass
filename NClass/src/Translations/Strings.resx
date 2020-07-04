@@ -1164,4 +1164,7 @@ Do you still want to continue?</value>
   <data name="MenuStateChart" xml:space="preserve">
     <value>State Chart</value>
   </data>
+  <data name="MenuState" xml:space="preserve">
+    <value>&amp;State</value>
+  </data>
 </root>

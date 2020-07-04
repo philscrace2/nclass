@@ -23,6 +23,8 @@ namespace NClass.Core
 		Interface,
 		Enum,
 		Delegate,
-		Comment
+		Comment,
+		State,
+		Transition
 	}
 }

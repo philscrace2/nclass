@@ -67,6 +67,7 @@
     <Compile Include="BadSyntaxException.cs" />
     <Compile Include="Entities\EntityType.cs" />
     <Compile Include="Entities\StateType.cs" />
+    <Compile Include="Entities\StateBase.cs" />
     <Compile Include="Members\MemberType.cs" />
     <Compile Include="RelationshipEventArgs.cs" />
     <Compile Include="Relationships\AssociationType.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="Relationships\Direction.cs" />
     <Compile Include="Members\Constructor.cs" />
     <Compile Include="Members\Destructor.cs" />
-    <Compile Include="Entities\SingleInharitanceType.cs" />
+    <Compile Include="Entities\SingleInheritanceType.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="ReservedNameException.cs" />
     <Compile Include="Project.cs" />

@@ -52,7 +52,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
 		protected virtual void RefreshToolAvailability()
 		{
 
-			toolOverrideList.Visible = Shape.CompositeType is SingleInharitanceType;
+			toolOverrideList.Visible = Shape.CompositeType is SingleInheritanceType;
 
 			IInterfaceImplementer implementer = Shape.CompositeType as IInterfaceImplementer;
 			if (implementer != null)
@@ -651,7 +651,7 @@ namespace NClass.DiagramEditor.ClassDiagram.Editors
 
 		private void toolOverrideList_Click(object sender, EventArgs e)
 		{
-			SingleInharitanceType type = Shape.CompositeType as SingleInharitanceType;
+			SingleInheritanceType type = Shape.CompositeType as SingleInheritanceType;
 			if (type != null)
 			{
 				using (OverrideDialog dialog = new OverrideDialog())
