@@ -11,7 +11,7 @@ namespace NClass.DiagramEditor.StateChart.Editors
 
         public override void ValidateData()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         /// <summary> 
@@ -29,7 +29,7 @@ namespace NClass.DiagramEditor.StateChart.Editors
 
         internal override void Init(DiagramElement element)
         {
-            throw new System.NotImplementedException();
+            //base.Init(element);
         }
 
         #region Component Designer generated code
