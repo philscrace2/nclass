@@ -1006,8 +1006,9 @@ namespace NClass.DiagramEditor.GenericUml
 
 			shape.IsSelected = true;
 			shape.IsActive = true;
-			if (shape is TypeShape) //TODO: nem szép
-				shape.ShowEditor();
+
+			shape.ShowEditor();		
+				
 		}
 
 		private void SelectElements(AbsoluteMouseEventArgs e)
