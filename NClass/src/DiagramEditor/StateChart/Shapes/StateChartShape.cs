@@ -107,7 +107,7 @@ namespace NClass.DiagramEditor.StateChart.Shapes
 
 		protected override int GetRoundingSize(Style style)
 		{
-			return style.ClassRoundingSize;
+			return style.StartChartShapeRoundingSize;
 		}
 
 		protected override GradientStyle GetGradientHeaderStyle(Style style)

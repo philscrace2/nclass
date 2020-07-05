@@ -100,6 +100,9 @@ namespace NClass.DiagramEditor
 		Color structureHeaderColor = Color.White;
 		GradientStyle structureGradientHeaderStyle = GradientStyle.None;
 
+		//State fields		
+		int stateRoundingSize = 30;
+
 		// Interface fields
 		int interfaceBorderWidth = 1;
 		int interfaceRoundingSize = 0;
@@ -142,7 +145,7 @@ namespace NClass.DiagramEditor
 		int relationshipWidth = 1;
 		Color relationshipColor = Color.Black;
 		Color relationshipTextColor = Color.Black;
-		Font relationshipTextFont = new Font("Tahoma", 8.25F);
+		Font relationshipTextFont = new Font("Tahoma", 8.25F);		
 
 		#endregion
 
@@ -1395,6 +1398,29 @@ namespace NClass.DiagramEditor
 		}
 
 		#endregion
+
+		#region StateChart properties
+
+		[DisplayName("Rounding Size"), Category("State")]
+		[Description("The rounding size of the corners for the state type.")]
+		[DefaultValue(10)]
+		public int StartChartShapeRoundingSize
+		{
+			get
+			{
+				return stateRoundingSize;
+			}
+			set
+			{
+				if (value < 0)
+					stateRoundingSize = 0;
+				else
+					stateRoundingSize = value;
+			}
+		}
+
+		#endregion
+
 
 		public Style Clone()
 		{
